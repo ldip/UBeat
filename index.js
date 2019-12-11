@@ -25,6 +25,7 @@ const search = require('./routes/search')
 const lookup = require('./routes/lookup')
 const playlist = require('./routes/playlists')
 const status = require('./routes/status')
+const like = require('./routes/like')
 
 const app = express()
 const corsOptions = {
@@ -83,6 +84,8 @@ app.get('/token', login.getToken)
 app.get('/tokenInfo', authentication.isAuthenticated, login.getToken)
 
 // Secure API
+app.post('/like/:type/:id', authentication.isAuthenticated, like.postLike)
+
 app.get('/search', authentication.isAuthenticated, search.search)
 app.get('/search/albums', authentication.isAuthenticated, search.searchByAlbum)
 app.get('/search/artists', authentication.isAuthenticated, search.searchByArtist)

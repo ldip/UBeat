@@ -28,7 +28,8 @@ const trackSchema = new Schema({
   trackTimeMillis: Number,
   country: String,
   currency: String,
-  primaryGenreName: String
+  primaryGenreName: String,
+  likeCount: Number
 })
 
 trackSchema.method('toJSON', modelHelpers.toJSON)

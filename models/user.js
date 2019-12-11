@@ -16,6 +16,12 @@ userSchema.add({
       email: String,
       id: String
     }
+  ],
+  like: [
+    {
+      media: String,
+      id: Number
+    }
   ]
 })
 
